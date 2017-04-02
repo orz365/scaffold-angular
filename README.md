@@ -1,6 +1,6 @@
-
-#在angular-seed的基础上，添加了grunt的基础打包代码
-#使用了grunt-usemin进行默认的打包编译， 自己 学习 用
+ 
+### 在angular-seed的基础上，添加了grunt的基础打包代码
+#### 使用了grunt-usemin进行默认的打包编译， 自己 学习 用
 
 # `angular-seed` — the seed for AngularJS apps
 
