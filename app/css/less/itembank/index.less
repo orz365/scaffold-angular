@@ -1,0 +1,85 @@
+@import "sjcs";
+@import "question";
+@import "qzmn";
+
+.itembank {
+  .ui-col {
+    text-align: center;
+    padding: 40px 0px 0px;
+  }
+  .title-icon {
+    width: 43%;
+    max-width: 110px;
+    height: auto;
+  }
+}
+
+.bank-alert{
+  display:none;
+  .shadow{
+    position:fixed;
+    top:0px;left:0px;
+    width:100%;height:100%;
+    background:rgba(0,0,0,.8);
+    z-index:101;
+  }
+
+  .box{
+    width:300px;
+    left:50%;
+    margin-left:-150px;
+    height:auto;
+    background:#fff;
+    border-radius:8px;
+
+    transform:translateY(-50%);
+    overflow:hidden;
+    position:fixed;
+    z-index:102;
+    top:50%;
+    .header{
+      height:30px;
+      background:#76c4c9;
+    }
+    .content{
+      min-height:50px;
+      padding:10px;
+      text-align:center;
+    }
+    .footer{
+      padding:10px 0px;
+      .btn{
+        background-size:cover;
+        background-image:url('../img/itembank/item/btn-bg.png');
+        width:100px;
+        height:37px;
+        color:#fff;
+      }
+    }
+  }
+}
+
+@bank-toast-radius:8px;
+.bank-toast{
+  position:fixed;
+  display:none;
+  width:100%;
+  height:100%;
+  top:0;left:0;
+  z-index:1000;
+  background:transparent;
+  .background{
+    position:fixed;
+    bottom:80px;
+    width:100%;
+    text-align:center;
+    .message{
+      color:#fff;
+      background:#76c3c9;
+      padding:20px 40px;
+      -webkit-border-radius:@bank-toast-radius;
+      -moz-border-radius:@bank-toast-radius;
+      border-radius:@bank-toast-radius;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@innerPaddingLeft : 60px;
+@outerOpenImage:url(../img/itembank/item/outer-plus-open.png);
+@outerCloseImage: url(../img/itembank/item/outer-plus.png);
+@innerOpenImage:url(../img/itembank/item/inner-item-corner.png);
+
+@ver-line-left:35px;
+@label-corner-width:20px;
+@label-corner-left:@ver-line-left - @label-corner-width/2;
+
+@item-label-corner-width:@label-corner-width - 7;
+@item-label-corner-left:@ver-line-left - @item-label-corner-width/2;
+
+.itembank {
+  .outer {
+    position: relative;
+    background: #f4f4f4;
+
+
+    box-sizing: border-box;
+    .inner-title {
+      position: relative;
+
+      padding-left: @innerPaddingLeft;
+
+      .label-corner {
+        position: absolute;
+        background: @outerOpenImage;
+        background-size: cover;
+        width: @label-corner-width;
+        height: @label-corner-width;
+        left: @label-corner-left;
+        top: 50%;
+        transform: translatey(-50%);
+      }
+    }
+    .inner-panel{
+      padding:20px 0px;
+      h4{
+        font-size:16px;
+        line-height:44px;
+      }
+      p{
+        font-size:12px;
+        color:#666;
+        padding-right:10px;
+      }
+    }
+
+    .inner {
+      .item{
+        position: relative;
+        padding-left: @innerPaddingLeft;
+        box-sizing: border-box;
+        .label-corner {
+          position: absolute;
+          background: @innerOpenImage;
+          background-size: cover;
+          width: @item-label-corner-width;
+          height: @item-label-corner-width;
+          left: @item-label-corner-left;
+          top: 50%;
+          transform: translatey(-50%);
+        }
+      }
+    }
+
+    .ver-line {
+      position: absolute;
+      width: 1px;
+      background: #76c4c9;
+      height: 100%;
+      left: @ver-line-left;
+
+      &.first {
+        height: 50%;
+        bottom: -1px;
+      }
+      &.last {
+        height: 50%;
+        top: -1px;
+      }
+    }
+
+    &.close {
+      .ver-line {
+        display: none;
+      }
+      .inner-title {
+        position: relative;
+        padding-left: @innerPaddingLeft;
+        box-sizing: border-box;
+        .label-corner {
+          position: absolute;
+          background:@outerCloseImage;
+          background-size: cover;
+          width: @label-corner-width;
+          height: @label-corner-width;
+          left: @label-corner-left;
+          top: 50%;
+          transform: translatey(-50%);
+        }
+      }
+      .inner{
+        display:none;
+      }
+
+    }
+
+  }
+
+}

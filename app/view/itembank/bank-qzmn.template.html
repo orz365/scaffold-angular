@@ -1,0 +1,41 @@
+<!-- 专项提升 -->
+<div style="padding-bottom:0px;">
+    <img alt="" src="img/itembank/zxts/banner.png" style="width:100%;display:block;">
+</div>
+<div class="itembank">
+    <div class="outer" ng-repeat="out in [1,2,3]">
+        <div class="inner-title ui-border-b"  ng-click="toggleItem($event)">
+            <div class="ver-line first"></div>
+            <div class="label-corner"></div>
+            <div class="inner-panel">
+                <div class="zero-flex zero-flex-horizontal zero-flex-center">
+                    <h4 class="ui-nowrap zero-flex-1" style="-webkit-box-flex: 1">
+                       言语理解
+                    </h4>
+                    <p class="zero-flex-ver-center" ng-click="continueLast($event)">
+                        继续上次
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="ui-border-b item clearfix" ng-repeat="item in [1,2,3]" >
+                <div class="ver-line" ng-class="{'last':$last}"></div>
+                <div class="label-corner"></div>
+                <div class="inner-panel">
+                    <div class="zero-flex zero-flex-horizontal zero-flex-center" ng-click="gotItemDesc($event)">
+                        <h4 class="ui-nowrap zero-flex-1" style="-webkit-box-flex: 1">
+                            片断阅读
+                        </h4>
+                        <div>
+                            <i class="ui-icon-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

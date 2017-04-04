@@ -1,0 +1,88 @@
+<!-- 通用的试题页面 -->
+
+<div class="itembank">
+    <header class="ui-header ui-header-positive question-header">
+        <div class="nav">
+            言语理解 | 篇章阅读
+        </div>
+        <div class="count">
+            1/15
+        </div>
+        <div class="clock" >
+            <a data-ng-init="initClock()">120:00</a>
+        </div>
+        <div class="more" ng-click="showMore($event)">
+            <img src="img/itembank/item/item-more.png"/>
+            <ul class="more-list">
+                <li  ng-click="collectThis($event)"><i class="more-icon collection"></i>收藏</li>
+                <li ng-click="shareThis($event)"><i class="more-icon share" ></i>分享</li>
+                <li><i class="more-icon">Aa</i>Aa</li>
+            </ul>
+        </div>
+    </header>
+
+    <footer class="ui-footer ui-footer-positive">
+        <div class="operations">
+            <div class="operation-btn" ng-click="saveQuit($event)">
+                保存退出
+            </div>
+            <div class="operation-btn" ng-click="submitQuestion($event)">
+                提交试卷
+            </div>
+            <div class="operation-btn" ng-click="preQuestion($event)">
+                上一题
+            </div>
+            <div class="operation-btn" ng-click="nextQuestion($event)">
+                下一题
+            </div>
+        </div>
+    </footer>
+
+    <section class="ui-container questions ">
+        <div ng-repeat="q in [1,2]">
+            <div class="question ui-panel" ng-if="q == 2" data-index="{{q}}">
+                <div class="title ui-whitespace ">
+                    {{q}}、 {{title}}
+                </div>
+                <div class="hint ui-whitespace ">
+                    依次填入划横线处最恰当的一项是：
+                </div>
+                <div class="answer">
+                    <div class="options ui-whitespace">
+                        <div class="option" ng-repeat="o in [1,2,3,4]" ng-click="selectOption($event)">
+                            <div class="icon">
+                                <span class="option-btn">A</span>
+                            </div>
+                            <div class="desc">烘托 有失偏颇 制造 不忍卒读 描绘 堪为典范 渲染 不足取法</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question <!--close--> material ui-panel" ng-if="q == 1" data-index="{{q}}">
+                <div class="title ui-whitespace">
+                    {{q}}、 {{title}}
+                </div>
+                <div class="answer ">
+                    <div class="hint ui-whitespace">
+                        <span>依次填入划横线处最恰当的一项是：</span>
+                        <div class="hint-btn" ng-click="toggleItem($event)"></div>
+                    </div>
+                    <div class="options ui-whitespace">
+                        <div class="option" ng-repeat="o in ['A','B','C','D','E','F']" ng-click="selectOption($event)">
+                            <div class="icon">
+                                <span class="option-btn">{{o}}</span>
+                            </div>
+                            <div class="desc">烘托 有失偏颇 制造 不忍卒读 描绘 堪为典范 渲染 不足取法</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div ng-include="'view/itembank/bank-alert.html'"></div>

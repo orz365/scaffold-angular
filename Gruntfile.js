@@ -8,6 +8,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     var path = {
         app:'app',
@@ -21,7 +22,7 @@ module.exports = function (grunt) {
 
         pkg: grunt.file.readJSON("package.json"),
 
-        clean: ['<%=path.dest%>/**'],
+        clean: ['<%=path.dest%>/**/**'],
 
         useminPrepare: {
             html: {
@@ -49,6 +50,7 @@ module.exports = function (grunt) {
                     // includes files within path
                     {expand: true, cwd: "<%=path.app%>/", src: ['view/**/**.html'], dest: '<%=path.dest%>/', filter: 'isFile'},
                     {expand: true, cwd: "<%=path.app%>/", src: ['img/**'], dest: '<%=path.dest%>/', filter: 'isFile'},
+                    {expand: true, cwd: "<%=path.app%>/css/", src: ['font/**'], dest: '<%=path.dest%>/', filter: 'isFile'},
                     {expand: false, src: ['<%=path.app%>/index.html'], dest: '<%=path.dest%>/index.html', filter: 'isFile'},
                 ],
             }
@@ -70,8 +72,16 @@ module.exports = function (grunt) {
                     src: ['<%=path.dest%>/**', '!<%=path.dest%>/**/**.html']
                 }]
             }
+        },
+        watch: {
+            scripts: {
+                files: ['<%=path.app%>/css/less/**/**.less'],
+                tasks: ['less'],
+                options: {
+                    spawn: false,
+                },
+            },
         }
-
 
     })
 

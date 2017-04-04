@@ -1,0 +1,47 @@
+<!-- 通用的试题页面 -->
+<div class="itembank hand-on-page">
+
+    <footer class="ui-footer ui-footer-positive">
+        <div class="operations">
+            <div class="operation-btn" ng-click="saveQuit($event)">
+                错题解析
+            </div>
+            <div class="operation-btn" ng-click="submitQuestion($event)">
+                全部解析
+            </div>
+        </div>
+    </footer>
+
+    <section class="ui-container">
+        <div class="panel right">
+            <div class="label">答对题目</div>
+            <div class="content">
+                <div class="circle">
+                    12
+                </div>
+            </div>
+        </div>
+
+        <div class="panel answer">
+            <div class="label">答对题目</div>
+            <div class="content">
+                <ul class="ui-row">
+                    <li class="ui-col ui-col-20" ng-repeat="a in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
+                        <div class="circle" ng-class="{true:'wrong'}[a==8]">{{a}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel statistic">
+            <div class="label">答对题目</div>
+            <div class="content">
+                共15题，答对12题，正确率80%，用时13分钟
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<div ng-include="'view/itembank/bank-alert.html'"></div>
